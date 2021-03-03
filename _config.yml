@@ -56,7 +56,7 @@ defaults:
       comments: "true"
 
 # Serving
-url: "jindai.io"
+url: "https://jindai.io"
 baseurl: ""
 
 # Includes
