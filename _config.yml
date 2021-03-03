@@ -4,8 +4,8 @@ job_title: A data person
 email: jindaidx@gmail.com
 description: I will add this later
 avatar: https://jindai-stats404-project.s3-us-west-2.amazonaws.com/IMG_2678+2.jpg
-favicon: /favicon.ico
-twitter_handler: your_handler
+favicon: https://jindai-stats404-project.s3-us-west-2.amazonaws.com/favicon-32x32.png
+twitter_handler: jindaidx
 analytics_code: UA-XXXXXXX-2
 disqus: your_disqus_site
 
@@ -17,7 +17,7 @@ social_networks:
 -  { name: google-plus, url: '' }
 -  { name: linkedin, url: '' }
 -  { name: skype, url: '' }
--  { name: github, url: '' }
+-  { name: github, url: 'github.com/poorjin' }
 -  { name: codepen, url: '' }
 -  { name: stack-overflow, url: '' }
 -  { name: dribbble, url: '' }
