@@ -9,9 +9,8 @@ category:
 - testing
 - - - -
 <figure>
-    <img src="￼https://pbs.twimg.com/profile_images/1242488527285190657/O6d8H8YA_400x400.jpg
-" />
-    <figcaption>Created by <a href=“image from web”  target="_blank_">Hannah Sharp</a></figcaption>
+    <img src="https://jindai-stats404-project.s3-us-west-2.amazonaws.com/favicon-32x32.png" />
+    <figcaption>Created by <a href=“”  target="_blank_">Logo</a></figcaption>
 </figure>
 
 
