@@ -9,7 +9,7 @@ category:
 - testing
 - - - -
 <figure>
-    <img src="https://jindai-stats404-project.s3-us-west-2.amazonaws.com/favicon-32x32.png" />
+    <img src="https://raw.githubusercontent.com/poorjin/poorjin.github.io/master/img/IMG_0164.JPG" />
     <figcaption>Created by <a href=“”  target="_blank_">Logo</a></figcaption>
 </figure>
 
