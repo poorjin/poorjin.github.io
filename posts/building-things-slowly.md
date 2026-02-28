@@ -3,8 +3,7 @@ title: "On building things slowly, and why that's enough"
 lede: "There is a quiet dignity in the unhurried project—the one nobody asks about at dinner, the one that earns no likes, and yet keeps pulling you back to the desk on a Tuesday night."
 date: "February 28, 2026"
 dateShort: "Feb 28"
-readTime: "8 min read"
-featured: true
+featured: false
 tags: ["craft", "process"]
 ---
 

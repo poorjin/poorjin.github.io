@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About — Jin Dai</title>
+    <meta name="description" content="Jin Dai is a software engineer writing about building things, debugging, and thinking clearly." />
+    <!-- Open Graph -->
+    <meta property="og:type"        content="website" />
+    <meta property="og:url"         content="https://poorjin.github.io/about.html" />
+    <meta property="og:title"       content="About — Jin Dai" />
+    <meta property="og:description" content="Jin Dai is a software engineer writing about building things, debugging, and thinking clearly." />
+    <!-- RSS -->
+    <link rel="alternate" type="application/rss+xml" title="Jin Dai" href="/feed.xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script>
+      (function () {
+        const saved = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        if (saved === "dark" || (!saved && prefersDark)) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
+  </head>
+  <body>
+
+    <header>
+      <div class="wrap">
+        <div class="header-top">
+          <h1 class="site-name"><a href="/">Jin Dai</a></h1>
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+            <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+            <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+          </button>
+        </div>
+        <hr class="rule" style="margin-top: 20px;" />
+        <nav aria-label="Primary">
+          <a href="/">Writing</a>
+          <a href="/about.html">About</a>
+        </nav>
+        <hr class="rule" style="margin-top: 0;" />
+      </div>
+    </header>
+
+    <main>
+      <div class="wrap">
+        <div class="about-body article-body">
+
+          <h2 style="font-size: clamp(24px, 4vw, 34px); font-weight: 400; margin: 0 0 32px; line-height: 1.2;">
+            Hi, I'm Jin.
+          </h2>
+
+          <p>
+            I'm a software engineer based in <!-- your city -->. I write about building software,
+            thinking clearly under pressure, and the quieter side of the craft — the parts that
+            don't make it into the pull request description.
+          </p>
+
+          <p>
+            This blog is where I work things out in public. Some posts are long-form essays.
+            Some are short notes. All of them are things I wished I'd been able to read earlier.
+          </p>
+
+          <h2>Work</h2>
+
+          <p>
+            I currently work at <!-- company -->. Previously <!-- previous role or project -->.
+            I'm generally interested in <!-- languages / domains / problems you care about -->.
+          </p>
+
+          <h2>Elsewhere</h2>
+
+          <ul>
+            <li><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a> — code and side projects</li>
+            <li><a href="mailto:hello@example.com">Email</a> — the best way to reach me</li>
+            <li><a href="/feed.xml">RSS</a> — subscribe to new posts</li>
+          </ul>
+
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <div class="footer-inner">
+          <span>&copy; 2026 Jin Dai</span>
+          <span class="footer-links">
+            <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+            <a href="mailto:hello@example.com">Email</a>
+            <a href="/feed.xml">RSS</a>
+          </span>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("themeToggle").addEventListener("click", function () {
+        const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+        if (isDark) {
+          document.documentElement.removeAttribute("data-theme");
+          localStorage.setItem("theme", "light");
+        } else {
+          document.documentElement.setAttribute("data-theme", "dark");
+          localStorage.setItem("theme", "dark");
+        }
+      });
+    </script>
+  </body>
+</html>

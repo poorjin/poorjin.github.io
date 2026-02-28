@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jin Dai</title>
+    <link>https://poorjin.github.io</link>
+    <description>Writing on software, craft, and the occasional digression.</description>
+    <language>en-us</language>
+    <atom:link href="https://poorjin.github.io/feed.xml" rel="self" type="application/rss+xml" />
+
+    <!-- To add a new entry: copy one <item> block, fill in the fields, save. -->
+
+    <item>
+      <title>Demo: images, code highlighting, and copy button</title>
+      <link>https://poorjin.github.io/article.html?slug=demo-images-and-code</link>
+      <guid>https://poorjin.github.io/article.html?slug=demo-images-and-code</guid>
+      <pubDate>Sat, 28 Feb 2026 00:00:00 +0000</pubDate>
+      <description>A quick test post showing pictures with captions, syntax-highlighted code blocks, and the copy button that appears on hover.</description>
+    </item>
+
+    <item>
+      <title>On building things slowly, and why that's enough</title>
+      <link>https://poorjin.github.io/article.html?slug=building-things-slowly</link>
+      <guid>https://poorjin.github.io/article.html?slug=building-things-slowly</guid>
+      <pubDate>Sat, 28 Feb 2026 00:00:00 +0000</pubDate>
+      <description>There is a quiet dignity in the unhurried project—the one nobody asks about at dinner, the one that earns no likes, and yet keeps pulling you back to the desk on a Tuesday night.</description>
+    </item>
+
+    <item>
+      <title>What I learned shipping tiny things</title>
+      <link>https://poorjin.github.io/article.html?slug=shipping-tiny-things</link>
+      <guid>https://poorjin.github.io/article.html?slug=shipping-tiny-things</guid>
+      <pubDate>Sat, 14 Feb 2026 00:00:00 +0000</pubDate>
+      <description>Short, practical takeaways from tools, interviews, and side projects.</description>
+    </item>
+
+    <item>
+      <title>A checklist for debugging under pressure</title>
+      <link>https://poorjin.github.io/article.html?slug=debugging-under-pressure</link>
+      <guid>https://poorjin.github.io/article.html?slug=debugging-under-pressure</guid>
+      <pubDate>Thu, 30 Jan 2026 00:00:00 +0000</pubDate>
+      <description>Reduce scope, measure, change one variable, write it down.</description>
+    </item>
+
+    <item>
+      <title>On taste, constraints, and good defaults</title>
+      <link>https://poorjin.github.io/article.html?slug=taste-constraints-defaults</link>
+      <guid>https://poorjin.github.io/article.html?slug=taste-constraints-defaults</guid>
+      <pubDate>Mon, 12 Jan 2026 00:00:00 +0000</pubDate>
+      <description>Constraints make decisions easier — and the work cleaner.</description>
+    </item>
+
+    <item>
+      <title>How I structure notes for future me</title>
+      <link>https://poorjin.github.io/article.html?slug=notes-for-future-me</link>
+      <guid>https://poorjin.github.io/article.html?slug=notes-for-future-me</guid>
+      <pubDate>Sun, 28 Dec 2025 00:00:00 +0000</pubDate>
+      <description>A small template that actually scales.</description>
+    </item>
+
+  </channel>
+</rss>

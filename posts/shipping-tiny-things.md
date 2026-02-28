@@ -3,7 +3,6 @@ title: "What I learned shipping tiny things"
 lede: "Short, practical takeaways from tools, interviews, and side projects."
 date: "February 14, 2026"
 dateShort: "Feb 14"
-readTime: "5 min read"
 featured: false
 tags: ["dev", "lessons"]
 ---

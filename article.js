@@ -124,6 +124,14 @@ function inline(s) {
     .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
 }
 
+/* ── Read time ───────────────────────────────────────── */
+
+function calcReadTime(text) {
+  const words = text.trim().split(/\s+/).length;
+  const mins = Math.max(1, Math.round(words / 200));
+  return mins + " min read";
+}
+
 /* ── Frontmatter parser ─────────────────────────────── */
 
 function parseFrontmatter(raw) {
@@ -196,10 +204,14 @@ document.addEventListener("DOMContentLoaded", function () {
     })
     .then(function (raw) {
       const { meta, body } = parseFrontmatter(raw);
+      const readTime = calcReadTime(body);
 
       document.title = (meta.title || slug) + " — Jin Dai";
-      const metaDesc = document.querySelector("meta[name='description']");
-      if (metaDesc) metaDesc.setAttribute("content", meta.lede || "");
+      const setMeta = function(sel, val) { const el = document.querySelector(sel); if (el) el.setAttribute("content", val); };
+      setMeta("meta[name='description']",       meta.lede || "");
+      setMeta("meta[property='og:title']",       meta.title || "");
+      setMeta("meta[property='og:description']", meta.lede || "");
+      setMeta("meta[property='og:url']",         location.origin + location.pathname + location.search);
 
       container.innerHTML = `
         <a href="/" class="article-back">
@@ -209,7 +221,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <header class="article-header">
           <h1>${meta.title || slug}</h1>
           ${meta.lede ? `<p class="lede">${meta.lede}</p>` : ""}
-          <p class="meta">${meta.date || ""} &nbsp;&middot;&nbsp; ${meta.readTime || ""}</p>
+          <p class="meta">${meta.date || ""} &nbsp;&middot;&nbsp; ${readTime}</p>
         </header>
         <div class="article-body">
           ${parseMarkdown(body)}
@@ -223,6 +235,22 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         syncHljsTheme();
       }
+
+      // Inject copy buttons into every <pre> block
+      container.querySelectorAll("pre").forEach(function (pre) {
+        const btn = document.createElement("button");
+        btn.className = "copy-btn";
+        btn.textContent = "Copy";
+        btn.addEventListener("click", function () {
+          const code = pre.querySelector("code");
+          navigator.clipboard.writeText(code ? code.innerText : pre.innerText).then(function () {
+            btn.textContent = "Copied!";
+            setTimeout(function () { btn.textContent = "Copy"; }, 2000);
+          });
+        });
+        pre.style.position = "relative";
+        pre.appendChild(btn);
+      });
     })
     .catch(function () {
       container.innerHTML = notFound();

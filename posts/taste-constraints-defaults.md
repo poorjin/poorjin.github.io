@@ -3,7 +3,6 @@ title: "On taste, constraints, and good defaults"
 lede: "Constraints make decisions easier — and the work cleaner."
 date: "January 12, 2026"
 dateShort: "Jan 12"
-readTime: "6 min read"
 featured: false
 tags: ["craft", "design"]
 ---

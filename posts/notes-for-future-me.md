@@ -3,7 +3,6 @@ title: "How I structure notes for future me"
 lede: "A small template that actually scales."
 date: "December 28, 2025"
 dateShort: "Dec 28"
-readTime: "3 min read"
 featured: false
 tags: ["productivity", "writing"]
 ---

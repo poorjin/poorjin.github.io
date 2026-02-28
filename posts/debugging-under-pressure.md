@@ -3,7 +3,6 @@ title: "A checklist for debugging under pressure"
 lede: "Reduce scope, measure, change one variable, write it down."
 date: "January 30, 2026"
 dateShort: "Jan 30"
-readTime: "4 min read"
 featured: false
 tags: ["dev", "debugging"]
 ---

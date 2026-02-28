@@ -396,6 +396,34 @@ main {
   border-radius: 4px;
 }
 
+/* ── Copy button ─────────────────────────────────────── */
+
+.copy-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 3px 10px;
+  background: var(--bg);
+  border: 1px solid var(--faint);
+  border-radius: 4px;
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity var(--transition), background var(--transition), color var(--transition);
+}
+
+.article-body pre:hover .copy-btn {
+  opacity: 1;
+}
+
+.copy-btn:hover {
+  background: var(--bg-2);
+  color: var(--ink);
+}
+
 /* ── Footer ─────────────────────────────────────────── */
 
 footer {
