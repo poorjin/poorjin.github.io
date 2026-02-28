@@ -1,11 +1,28 @@
 ---
-title: "On building things slowly, and why that's enough"
-lede: "There is a quiet dignity in the unhurried project—the one nobody asks about at dinner, the one that earns no likes, and yet keeps pulling you back to the desk on a Tuesday night."
-date: "February 28, 2026"
-dateShort: "Feb 28"
+title: "On building things slowly"
+lede: "Consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna."
+date: "February 14, 2026"
+dateShort: "Feb 14"
 featured: false
-tags: ["craft", "process"]
+tags: ["dev", "craft"]
 ---
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+
+## Duis aute irure
+
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+
+> Sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Curabitur pretium tincidunt lacus. Nulla gravida orci a odio, et tempus feugiat. Nullam varius turpis ut ligula eleifend, vel sagittis nunc ultrices.
+
+## Pellentesque habitant
+
+Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.
+
+Donec eu libero sit amet quam egestas semper. *Aenean ultricies mi vitae est.* **Mauris placerat eleifend leo.** Quisque sit amet est et sapien ullamcorper pharetra.
+
 
 I have a folder on my desktop called *slow*. It holds projects that have no deadline, no audience, and no obvious purpose beyond the fact that I keep returning to them. A small interpreter. A note-taking tool I'll probably never finish. A half-written essay about maps.
 

@@ -7,6 +7,35 @@ featured: false
 tags: ["dev", "debugging"]
 ---
 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Maecenas vel nunc at nisl varius tincidunt.
+
+## Phasellus dignissim
+
+Phasellus dignissim, **felis nec tincidunt** cursus, arcu libero laoreet est, vel dictum velit nisl nec tortor. Proin vel nisi vel lacus iaculis vestibulum.
+
+### Step one
+
+Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend libero at lobortis.
+
+### Step two
+
+Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum.
+
+```python
+def debug(problem):
+    scope = reduce(problem)
+    baseline = measure(scope)
+    fix = change_one_thing(scope)
+    return verify(fix, baseline)
+```
+
+### Step three
+
+Fusce fermentum. *Nullam varius nulla eu ante.* Integer metus purus, tincidunt sit amet, placerat vel, laoreet id, nunc. Phasellus ultrices nulla quis nibh.
+
+> Donec porta diam eu massa. Quisque diam lorem, interdum vitae, dapibus ac, scelerisque vitae, pede.
+
+
 Production is down. Your hands are slightly cold. The Slack thread is 40 messages long and nobody agrees on what's happening.
 
 This is the worst time to think clearly, and also the only time you have.

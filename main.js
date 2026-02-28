@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <span class="label">Featured Essay</span>
           <h2><a href="/article.html?slug=${featured.slug}">${featured.title}</a></h2>
           <p class="lede">${featured.lede}</p>
-          <p class="meta">${featured.date} &nbsp;&middot;&nbsp; ${featured.readTime}</p>
+          <p class="meta">${featured.date}</p>
         </article>
       `;
 
