@@ -3,6 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      if (location.protocol === "http:" && (location.hostname === "jind.ai" || location.hostname.endsWith(".github.io"))) {
+        location.replace("https://" + location.host + location.pathname + location.search + location.hash);
+      }
+    </script>
     <title>About — Jin Dai</title>
     <meta name="description" content="Jin Dai is a software engineer writing about building things, debugging, and thinking clearly." />
     <!-- Open Graph -->

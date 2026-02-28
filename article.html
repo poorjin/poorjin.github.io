@@ -3,6 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      if (location.protocol === "http:" && (location.hostname === "jind.ai" || location.hostname.endsWith(".github.io"))) {
+        location.replace("https://" + location.host + location.pathname + location.search + location.hash);
+      }
+    </script>
     <!-- Title and description are set by article.js based on ?slug= param -->
     <title>Jin Dai</title>
     <meta name="description" content="" />
