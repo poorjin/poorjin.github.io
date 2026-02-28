@@ -1,0 +1,52 @@
+[
+  {
+    "slug":      "building-things-slowly",
+    "featured":  true,
+    "title":     "On building things slowly, and why that's enough",
+    "lede":      "There is a quiet dignity in the unhurried project—the one nobody asks about at dinner, the one that earns no likes, and yet keeps pulling you back to the desk on a Tuesday night.",
+    "date":      "February 28, 2026",
+    "dateShort": "Feb 28",
+    "readTime":  "8 min read",
+    "tags":      ["craft", "process"]
+  },
+  {
+    "slug":      "shipping-tiny-things",
+    "featured":  false,
+    "title":     "What I learned shipping tiny things",
+    "lede":      "Short, practical takeaways from tools, interviews, and side projects.",
+    "date":      "February 14, 2026",
+    "dateShort": "Feb 14",
+    "readTime":  "5 min read",
+    "tags":      ["dev", "lessons"]
+  },
+  {
+    "slug":      "debugging-under-pressure",
+    "featured":  false,
+    "title":     "A checklist for debugging under pressure",
+    "lede":      "Reduce scope, measure, change one variable, write it down.",
+    "date":      "January 30, 2026",
+    "dateShort": "Jan 30",
+    "readTime":  "4 min read",
+    "tags":      ["dev", "debugging"]
+  },
+  {
+    "slug":      "taste-constraints-defaults",
+    "featured":  false,
+    "title":     "On taste, constraints, and good defaults",
+    "lede":      "Constraints make decisions easier — and the work cleaner.",
+    "date":      "January 12, 2026",
+    "dateShort": "Jan 12",
+    "readTime":  "6 min read",
+    "tags":      ["craft", "design"]
+  },
+  {
+    "slug":      "notes-for-future-me",
+    "featured":  false,
+    "title":     "How I structure notes for future me",
+    "lede":      "A small template that actually scales.",
+    "date":      "December 28, 2025",
+    "dateShort": "Dec 28",
+    "readTime":  "3 min read",
+    "tags":      ["productivity", "writing"]
+  }
+]
