@@ -3,137 +3,88 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Jin Dai — Notes</title>
-    <meta name="description" content="A minimalist, newspaper-style front page for a personal blog." />
+    <title>Jin Dai</title>
+    <meta name="description" content="Essays, notes, and experiments by Jin Dai." />
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
-    <header class="container">
-      <div class="topbar">
-        <div>February 28, 2026</div>
-        <div>Jin Dai</div>
-        <div><a href="#">Subscribe</a> · <a href="#">Sign in</a></div>
-      </div>
-      <div class="rule"></div>
 
-      <div class="masthead">
-        <div class="brand">
-          <h1 class="name">Jin Dai</h1>
-          <p class="tagline">A small front page for essays, notes, and experiments.</p>
-        </div>
+    <header>
+      <div class="wrap">
+        <h1 class="site-name">Jin Dai</h1>
+        <p class="site-tagline">Essays &amp; Notes</p>
+        <hr class="rule" />
+        <nav aria-label="Primary">
+          <a href="#">Writing</a>
+          <a href="#">Projects</a>
+          <a href="#">Reading</a>
+          <a href="#">About</a>
+        </nav>
+        <hr class="rule" />
       </div>
-
-      <div class="rule"></div>
-      <nav class="nav" aria-label="Primary">
-        <a href="#">Home</a>
-        <a href="#">Writing</a>
-        <a href="#">Projects</a>
-        <a href="#">Reading</a>
-        <a href="#">About</a>
-      </nav>
-      <div class="rule"></div>
     </header>
 
-    <main class="container">
-      <div class="grid">
-        <section class="left" aria-label="Top stories">
-          <article class="lead">
-            <div class="kicker">Lead Story</div>
-            <h2 class="h1"><a href="#">Minimalism as a default: building a calm personal site</a></h2>
-            <p class="deck">
-              A newspaper-like layout that stays simple: readable type, clear hierarchy, and the smallest set of moving parts.
-            </p>
-            <div class="meta">8 min read · Updated today</div>
-          </article>
+    <main>
+      <div class="wrap">
 
-          <article class="story">
-            <div class="kicker">Notes</div>
-            <h2><a href="#">What I learned shipping tiny things</a></h2>
-            <p>
-              Short, practical takeaways from building tools, interviews, and side projects.
-            </p>
-            <div class="meta">3 min read</div>
-          </article>
+        <!-- Featured essay -->
+        <article class="featured">
+          <span class="label">Featured Essay</span>
+          <h2><a href="#">On building things slowly, and why that&rsquo;s enough</a></h2>
+          <p class="lede">
+            There is a quiet dignity in the unhurried project—the one nobody asks about at dinner,
+            the one that earns no likes, and yet keeps pulling you back to the desk on a Tuesday night.
+          </p>
+          <p class="meta">Feb 28, 2026 &nbsp;&middot;&nbsp; 8 min read</p>
+        </article>
 
-          <article class="story">
-            <div class="kicker">Engineering</div>
-            <h2><a href="#">A checklist for debugging under pressure</a></h2>
-            <p>
-              A repeatable loop: reduce scope, measure, change one variable, and write down what happened.
-            </p>
-            <div class="meta">6 min read</div>
-          </article>
+        <!-- Post list -->
+        <p class="posts-label">Recent Writing</p>
+        <ul class="post-list">
 
-          <article class="story">
-            <div class="kicker">Culture</div>
-            <h2><a href="#">On taste, constraints, and good defaults</a></h2>
-            <p>
-              Constraints make decisions easier—and the work cleaner.
-            </p>
-            <div class="meta">4 min read</div>
-          </article>
+          <li>
+            <a href="#" class="post-title">
+              What I learned shipping tiny things
+              <span class="sub">Short, practical takeaways from tools, interviews, and side projects.</span>
+            </a>
+            <span class="post-date">Feb 14</span>
+          </li>
 
-          <article class="story">
-            <div class="kicker">Bookmarks</div>
-            <h2><a href="#">Three links I keep returning to</a></h2>
-            <p>
-              Essays on writing, systems, and craft.
-            </p>
-            <div class="meta">2 min read</div>
-          </article>
-        </section>
+          <li>
+            <a href="#" class="post-title">
+              A checklist for debugging under pressure
+              <span class="sub">Reduce scope, measure, change one variable, write it down.</span>
+            </a>
+            <span class="post-date">Jan 30</span>
+          </li>
 
-        <aside class="sidebar" aria-label="Sidebar">
-          <section class="module">
-            <h3>Latest</h3>
-            <ul class="bullets">
-              <li>
-                <a href="#">
-                  <div class="t">How I structure notes for future me</div>
-                  <div class="s">A small template that scales.</div>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <div class="t">A week of deliberate practice</div>
-                  <div class="s">Small reps, compounding returns.</div>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <div class="t">A clean README is a product feature</div>
-                  <div class="s">Make the first five minutes frictionless.</div>
-                </a>
-              </li>
-            </ul>
-          </section>
+          <li>
+            <a href="#" class="post-title">
+              On taste, constraints, and good defaults
+              <span class="sub">Constraints make decisions easier — and the work cleaner.</span>
+            </a>
+            <span class="post-date">Jan 12</span>
+          </li>
 
-          <section class="module">
-            <h3>About this site</h3>
-            <ul class="bullets">
-              <li>
-                <a href="#">
-                  <div class="t">Simple HTML + CSS</div>
-                  <div class="s">No build step required (for now).</div>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <div class="t">GitHub Pages hosting</div>
-                  <div class="s">Custom domain via `CNAME`.</div>
-                </a>
-              </li>
-            </ul>
-          </section>
-        </aside>
+          <li>
+            <a href="#" class="post-title">
+              How I structure notes for future me
+              <span class="sub">A small template that actually scales.</span>
+            </a>
+            <span class="post-date">Dec 28</span>
+          </li>
+
+        </ul>
+
       </div>
     </main>
 
-    <footer class="container">
-      <div class="rule"></div>
-      <div class="footer">
-        <div>© 2026 Jin Dai · <a href="#">RSS</a> · <a href="#">Email</a> · <a href="#">GitHub</a></div>
+    <footer>
+      <div class="wrap">
+        <div>&copy; 2026 Jin Dai</div>
+        <div><a href="#">GitHub</a> &nbsp;&middot;&nbsp; <a href="#">Email</a> &nbsp;&middot;&nbsp; <a href="#">RSS</a></div>
       </div>
     </footer>
+
   </body>
 </html>
