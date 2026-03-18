@@ -3,7 +3,7 @@
     "slug":      "demo-images-and-code",
     "featured":  true,
     "title":     "Demo: images, code highlighting, and copy button",
-    "lede":      "Lorem ipsum dolor sit amet — pictures, syntax-highlighted code, and the copy button on hover.",
+    "lede":      "A sandbox post for images, code blocks, captions, and the small details that make technical writing feel good.",
     "date":      "February 28, 2026",
     "dateShort": "Feb 28"
   },
@@ -11,7 +11,7 @@
     "slug":      "building-things-slowly",
     "featured":  false,
     "title":     "On building things slowly",
-    "lede":      "Consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna.",
+    "lede":      "Why side projects without deadlines still teach you how to think, build, and return to the work.",
     "date":      "February 14, 2026",
     "dateShort": "Feb 14"
   },
@@ -19,7 +19,7 @@
     "slug":      "debugging-under-pressure",
     "featured":  false,
     "title":     "A checklist for debugging under pressure",
-    "lede":      "Reduce scope, measure, change one variable, write it down.",
+    "lede":      "A practical checklist for staying calm, narrowing scope, and fixing the right thing under pressure.",
     "date":      "January 30, 2026",
     "dateShort": "Jan 30"
   }
