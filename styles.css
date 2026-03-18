@@ -5,6 +5,8 @@
   --ink-2:     #3d3d3d;
   --muted:     #6b6b6b;
   --faint:     #d8d4ce;
+  --accent:    #355c7d;
+  --accent-soft: color-mix(in srgb, var(--accent) 14%, transparent);
   --bg:        #faf8f5;
   --bg-2:      #f2efe9;
   --max:       680px;
@@ -18,6 +20,8 @@
   --ink-2:  #bfb9ae;
   --muted:  #8a8480;
   --faint:  #2e2c29;
+  --accent: #88a9c5;
+  --accent-soft: color-mix(in srgb, var(--accent) 18%, transparent);
   --bg:     #161513;
   --bg-2:   #1e1c19;
 }
@@ -90,6 +94,15 @@ header {
   text-decoration: none;
 }
 
+.home-page .header-top {
+  margin-bottom: 14px;
+}
+
+.home-page .site-name {
+  font-size: clamp(40px, 7vw, 62px);
+  letter-spacing: 0;
+}
+
 .site-tagline {
   margin: 0;
   color: var(--muted);
@@ -99,11 +112,21 @@ header {
   max-width: 420px;
 }
 
+.home-page .site-tagline {
+  max-width: 460px;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+}
+
 .rule {
   margin: 24px 0 0;
   border: none;
   border-top: 1px solid var(--faint);
   transition: border-color var(--transition);
+}
+
+.home-page .site-tagline + .rule {
+  margin-top: 30px;
 }
 
 nav {
@@ -117,6 +140,26 @@ nav {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--muted);
+}
+
+.home-page nav {
+  gap: 8px 24px;
+  padding: 14px 0 18px;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+}
+
+.home-page nav a {
+  position: relative;
+  transition: color var(--transition);
+}
+
+.home-page nav a:hover {
+  color: color-mix(in srgb, var(--accent) 72%, var(--muted));
+}
+
+.home-page nav + .rule {
+  margin-top: 0;
 }
 
 nav a:hover {
@@ -227,9 +270,13 @@ main {
 /* Featured essay ---------------------------------------- */
 
 .featured {
-  margin-bottom: 56px;
+  margin-bottom: 60px;
   padding-bottom: 48px;
   border-bottom: 1px solid var(--faint);
+}
+
+.home-page .featured {
+  padding-bottom: 52px;
 }
 
 .label {
@@ -240,6 +287,12 @@ main {
   font-size: 11px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+}
+
+.home-page .label,
+.home-page .posts-label {
+  color: color-mix(in srgb, var(--accent) 56%, var(--muted));
+  letter-spacing: 0.12em;
 }
 
 .featured h2 {
@@ -256,7 +309,7 @@ main {
 }
 
 .featured .lede {
-  margin: 16px 0 0;
+  margin: 14px 0 0;
   color: var(--ink-2);
   font-size: 17px;
   line-height: 1.7;
@@ -268,6 +321,10 @@ main {
   font-family: var(--sans);
   font-size: 12px;
   letter-spacing: 0.03em;
+}
+
+.home-page .featured .meta {
+  color: color-mix(in srgb, var(--accent) 42%, var(--muted));
 }
 
 /* Post list --------------------------------------------- */
@@ -297,6 +354,15 @@ main {
   transition: border-color var(--transition);
 }
 
+.home-page .post-list li {
+  transition: border-color var(--transition), transform var(--transition);
+}
+
+.home-page .post-list li:hover {
+  border-top-color: color-mix(in srgb, var(--accent) 18%, var(--faint));
+  transform: translateX(1px);
+}
+
 .post-list li:last-child {
   border-bottom: 1px solid var(--faint);
 }
@@ -305,6 +371,14 @@ main {
   font-family: var(--serif);
   font-size: 18px;
   line-height: 1.3;
+}
+
+.home-page .post-title {
+  transition: color var(--transition);
+}
+
+.home-page .post-list li:hover .post-title {
+  color: color-mix(in srgb, var(--accent) 68%, var(--ink));
 }
 
 .post-title:hover {
@@ -327,6 +401,10 @@ main {
   color: var(--muted);
   font-family: var(--sans);
   font-size: 12px;
+}
+
+.home-page .post-date {
+  letter-spacing: 0.03em;
 }
 
 /* ── Article page ───────────────────────────────────── */
