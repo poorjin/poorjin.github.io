@@ -866,11 +866,13 @@ footer a:hover {
 
   .about-intro {
     grid-template-columns: 1fr;
+    justify-items: center;
     gap: 24px;
     margin-bottom: 28px;
   }
 
   .about-portrait {
+    place-self: center;
     max-width: 260px;
     margin: 0 auto;
     width: 100%;
@@ -879,6 +881,7 @@ footer a:hover {
   }
 
   .about-intro-copy {
+    width: 100%;
     padding-top: 0;
   }
 
