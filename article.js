@@ -206,7 +206,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const { meta, body } = parseFrontmatter(raw);
       const readTime = calcReadTime(body);
 
-      document.title = (meta.title || slug) + " — Jin Dai";
+      document.title = (meta.title || slug) + " — Jin’s Latent Space";
       const setMeta = function(sel, val) { const el = document.querySelector(sel); if (el) el.setAttribute("content", val); };
       setMeta("meta[name='description']",       meta.lede || "");
       setMeta("meta[property='og:title']",       meta.title || "");
