@@ -1,0 +1,26 @@
+name: Rebuild post index
+
+on:
+  push:
+    paths:
+      - "posts/**.md"
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate posts/index.json
+        run: ./build-index.sh
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git diff --quiet posts/index.json && exit 0
+          git add posts/index.json
+          git commit -m "chore: rebuild post index"
+          git push

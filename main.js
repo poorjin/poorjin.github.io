@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       let html = `
         <article class="featured">
-          <span class="label">Featured Essay</span>
+          <span class="label">Newest thing</span>
           <h2><a href="/article.html?slug=${featured.slug}">${featured.title}</a></h2>
           <p class="lede">${featured.lede}</p>
           <p class="meta">${featured.date}</p>
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
       `;
 
       if (rest.length > 0) {
-        html += `<p class="posts-label">Recent Writing</p><ul class="post-list">`;
+        html += `<p class="posts-label">More posts</p><ul class="post-list">`;
         rest.forEach(function (a) {
           html += `
             <li>

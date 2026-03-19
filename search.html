@@ -8,20 +8,29 @@
         location.replace("https://" + location.host + location.pathname + location.search + location.hash);
       }
     </script>
-    <title>All Posts — Jin’s Latent Space</title>
-    <meta name="description" content="All the posts, notes, and side thoughts from Jin’s Latent Space." />
+    <title>Search — Jin’s Latent Space</title>
+    <meta name="description" content="Search across posts on Jin’s Latent Space." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://poorjin.github.io/archive.html" />
-    <meta property="og:title" content="All Posts — Jin’s Latent Space" />
-    <meta property="og:description" content="All the posts, notes, and side thoughts from Jin’s Latent Space." />
+    <meta property="og:url" content="https://poorjin.github.io/search.html" />
+    <meta property="og:title" content="Search — Jin’s Latent Space" />
+    <meta property="og:description" content="Search across posts on Jin’s Latent Space." />
     <link rel="alternate" type="application/rss+xml" title="Jin’s Latent Space" href="/feed.xml" />
     <link rel="icon" type="image/png" href="/favicon_3.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/styles.css" />
+    <script>
+      (function () {
+        const saved = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        if (saved === "dark" || (!saved && prefersDark)) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
   </head>
-  <body class="archive-page">
+  <body>
     <header>
       <div class="wrap">
         <div class="header-top">
@@ -44,12 +53,32 @@
 
     <main>
       <div class="wrap">
-        <section class="archive-header">
-          <span class="label">All Posts</span>
-          <h1>Everything I've posted so far.</h1>
-          <p class="lede">A running list of posts, notes, and occasional side quests.</p>
+        <section class="search-header">
+          <span class="label">Search</span>
+          <h2>Find a post.</h2>
+          <p class="lede">Search by title, topic, or anything you remember.</p>
         </section>
-        <div id="archive-content"></div>
+
+        <section class="search-shell">
+          <form class="search-form" id="search-form" role="search" autocomplete="off">
+            <label class="search-label visually-hidden" for="search-input">Search posts</label>
+            <div class="search-input-row">
+              <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+              <input
+                id="search-input"
+                class="search-input"
+                type="search"
+                name="q"
+                placeholder="Type to search…"
+                inputmode="search"
+                spellcheck="false"
+              />
+              <button type="button" class="search-clear" id="search-clear" hidden>&times;</button>
+            </div>
+          </form>
+
+          <section class="search-results" id="search-results" aria-live="polite"></section>
+        </section>
       </div>
     </main>
 
@@ -66,6 +95,6 @@
       </div>
     </footer>
 
-    <script src="/archive.js"></script>
+    <script src="/search.js"></script>
   </body>
 </html>

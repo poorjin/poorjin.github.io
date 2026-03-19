@@ -1,17 +1,9 @@
 [
   {
-    "slug":      "demo-images-and-code",
-    "featured":  true,
-    "title":     "Demo: images, code highlighting, and copy button",
-    "lede":      "A sandbox post for images, code blocks, captions, and the small details that make technical writing feel good.",
-    "date":      "February 28, 2026",
-    "dateShort": "Feb 28"
-  },
-  {
     "slug":      "building-things-slowly",
     "featured":  false,
     "title":     "On building things slowly",
-    "lede":      "Why side projects without deadlines still teach you how to think, build, and return to the work.",
+    "lede":      "Consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna.",
     "date":      "February 14, 2026",
     "dateShort": "Feb 14"
   },
@@ -19,9 +11,40 @@
     "slug":      "debugging-under-pressure",
     "featured":  false,
     "title":     "A checklist for debugging under pressure",
-    "lede":      "A practical checklist for staying calm, narrowing scope, and fixing the right thing under pressure.",
+    "lede":      "Reduce scope, measure, change one variable, write it down.",
     "date":      "January 30, 2026",
     "dateShort": "Jan 30"
+  },
+  {
+    "slug":      "demo-images-and-code",
+    "featured":  true,
+    "title":     "Demo: images, code highlighting, and copy button",
+    "lede":      "A quick test post showing pictures with captions, syntax-highlighted code blocks, and the copy button that appears on hover.",
+    "date":      "February 28, 2026",
+    "dateShort": "Feb 28"
+  },
+  {
+    "slug":      "notes-for-future-me",
+    "featured":  false,
+    "title":     "How I structure notes for future me",
+    "lede":      "A small template that actually scales.",
+    "date":      "December 28, 2025",
+    "dateShort": "Dec 28"
+  },
+  {
+    "slug":      "shipping-tiny-things",
+    "featured":  false,
+    "title":     "What I learned shipping tiny things",
+    "lede":      "Short, practical takeaways from tools, interviews, and side projects.",
+    "date":      "February 14, 2026",
+    "dateShort": "Feb 14"
+  },
+  {
+    "slug":      "taste-constraints-defaults",
+    "featured":  false,
+    "title":     "On taste, constraints, and good defaults",
+    "lede":      "Constraints make decisions easier — and the work cleaner.",
+    "date":      "January 12, 2026",
+    "dateShort": "Jan 12"
   }
 ]
-

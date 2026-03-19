@@ -216,7 +216,7 @@ document.addEventListener("DOMContentLoaded", function () {
       container.innerHTML = `
         <a href="/" class="article-back">
           <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
-          Home
+          Blog
         </a>
         <header class="article-header">
           <h1>${meta.title || slug}</h1>
@@ -227,8 +227,8 @@ document.addEventListener("DOMContentLoaded", function () {
           ${parseMarkdown(body)}
         </div>
         <nav class="article-end-nav" aria-label="Article end navigation">
-          <a href="/" class="article-end-link">Home</a>
-          <a href="/archive.html" class="article-end-link">Archive</a>
+          <a href="/" class="article-end-link">Blog</a>
+          <a href="/archive.html" class="article-end-link">All Posts</a>
           <a href="/about.html" class="article-end-link">About</a>
         </nav>
       `;
@@ -270,7 +270,7 @@ function notFound() {
   return `
     <a href="/" class="article-back">
       <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
-      Home
+      Blog
     </a>
     <p style="color:var(--muted);font-family:var(--sans);font-size:15px;">Article not found.</p>
   `;
