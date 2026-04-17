@@ -297,7 +297,9 @@ main {
 }
 
 .home-page .featured {
-  padding-bottom: 52px;
+  margin-bottom: 0;
+  padding-bottom: 56px;
+  border-bottom: 0;
 }
 
 .label {
@@ -426,6 +428,23 @@ main {
 
 .home-page .post-date {
   letter-spacing: 0.03em;
+}
+
+.see-all {
+  margin: 36px 0 0;
+  font-family: var(--sans);
+  font-size: 13px;
+  letter-spacing: 0.02em;
+}
+
+.see-all a {
+  color: var(--muted);
+  transition: color var(--transition);
+}
+
+.see-all a:hover {
+  color: color-mix(in srgb, var(--accent) 72%, var(--ink));
+  text-decoration: none;
 }
 
 /* ── Archive page ───────────────────────────────────── */

@@ -41,12 +41,15 @@ document.addEventListener("DOMContentLoaded", function () {
   fetch("/posts/index.json")
     .then(function (res) { return res.json(); })
     .then(function (articles) {
+      const HOMEPAGE_LIMIT = 5;
       const featured = articles.find(function (a) { return a.featured; }) || articles[0];
-      const rest = articles.filter(function (a) { return a !== featured; });
+      const rest = articles
+        .filter(function (a) { return a !== featured; })
+        .slice(0, HOMEPAGE_LIMIT - 1);
+      const hasMore = articles.length > HOMEPAGE_LIMIT;
 
       let html = `
         <article class="featured">
-          <span class="label">Newest thing</span>
           <h2><a href="/article.html?slug=${featured.slug}">${featured.title}</a></h2>
           <p class="lede">${featured.lede}</p>
           <p class="meta">${featured.date}</p>
@@ -54,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
       `;
 
       if (rest.length > 0) {
-        html += `<p class="posts-label">More posts</p><ul class="post-list">`;
+        html += `<ul class="post-list">`;
         rest.forEach(function (a) {
           html += `
             <li>
@@ -67,6 +70,10 @@ document.addEventListener("DOMContentLoaded", function () {
           `;
         });
         html += `</ul>`;
+      }
+
+      if (hasMore) {
+        html += `<p class="see-all"><a href="/archive.html">See all posts &rarr;</a></p>`;
       }
 
       container.innerHTML = html;
