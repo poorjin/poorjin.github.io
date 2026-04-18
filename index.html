@@ -18,10 +18,20 @@
     <!-- RSS -->
     <link rel="alternate" type="application/rss+xml" title="Jin’s Latent Space" href="/feed.xml" />
     <link rel="icon" type="image/png" href="/favicon_3.png" />
+    <link rel="preload" href="/posts/index.json" as="fetch" crossorigin="anonymous" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/styles.css" />
+    <script>
+      (function () {
+        const saved = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        if (saved === "dark" || (!saved && prefersDark)) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
   </head>
   <body class="home-page">
 
@@ -34,15 +44,14 @@
             <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
           </button>
         </div>
-        <p class="site-tagline">A quiet blog about work, the internet, taste, and the occasional detour.</p>
-        <hr class="rule" />
+        <hr class="rule" style="margin-top: 20px;" />
         <nav aria-label="Primary">
-          <a href="/">Blog</a>
+          <a href="/" aria-current="page">Blog</a>
           <a href="/archive.html">All Posts</a>
           <a href="/search.html">Search</a>
           <a href="/about.html">About</a>
         </nav>
-        <hr class="rule" />
+        <hr class="rule" style="margin-top: 0;" />
       </div>
     </header>
 

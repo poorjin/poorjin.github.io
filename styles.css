@@ -92,39 +92,11 @@ header {
   text-decoration: none;
 }
 
-.home-page .header-top {
-  margin-bottom: 14px;
-}
-
-.home-page .site-name {
-  font-size: clamp(40px, 7vw, 62px);
-  letter-spacing: 0;
-}
-
-.site-tagline {
-  margin: 0;
-  color: var(--muted);
-  font-family: var(--sans);
-  font-size: 13px;
-  line-height: 1.5;
-  max-width: 420px;
-}
-
-.home-page .site-tagline {
-  max-width: 460px;
-  font-size: 12px;
-  letter-spacing: 0.02em;
-}
-
 .rule {
   margin: 24px 0 0;
   border: none;
   border-top: 1px solid var(--faint);
   transition: border-color var(--transition);
-}
-
-.home-page .site-tagline + .rule {
-  margin-top: 30px;
 }
 
 nav {
@@ -140,29 +112,13 @@ nav {
   color: var(--muted);
 }
 
-.home-page nav {
-  gap: 8px 24px;
-  padding: 14px 0 18px;
-  font-size: 11px;
-  letter-spacing: 0.1em;
-}
-
-.home-page nav a {
-  position: relative;
-  transition: color var(--transition);
-}
-
-.home-page nav a:hover {
-  color: color-mix(in srgb, var(--accent) 72%, var(--muted));
-}
-
-.home-page nav + .rule {
-  margin-top: 0;
-}
-
 nav a:hover {
   color: var(--ink);
   text-decoration: none;
+}
+
+nav a[aria-current="page"] {
+  color: var(--ink);
 }
 
 /* ── Dark mode toggle ───────────────────────────────── */
@@ -201,6 +157,10 @@ main {
 
 main.about-main {
   padding-top: 40px;
+}
+
+.home-page #content:empty {
+  min-height: 70vh;
 }
 
 .about-minimal {
