@@ -199,93 +199,81 @@ main {
   padding: 52px 0 80px;
 }
 
-.about-intro {
+main.about-main {
+  padding-top: 40px;
+}
+
+.about-minimal {
+  max-width: 36rem;
+  margin: 0 auto;
+}
+
+.about-minimal .intro-row {
   display: grid;
-  grid-template-columns: minmax(200px, 240px) minmax(0, 1fr);
+  grid-template-columns: 148px minmax(0, 1fr);
+  gap: 28px;
   align-items: center;
-  gap: 44px;
-  margin: 6px 0 0;
-  padding-bottom: 44px;
-  border-bottom: 1px solid var(--faint);
+  margin-bottom: 28px;
 }
 
-.about-portrait {
-  margin: 0;
+.about-minimal .plate-frame {
+  width: 148px;
+  aspect-ratio: 4 / 5;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--ink) 7%, transparent),
+    0 1px 0 0 color-mix(in srgb, var(--ink) 4%, transparent);
 }
 
-.about-portrait img {
+.about-minimal .plate-frame img {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 5;
-  height: auto;
+  height: 100%;
   object-fit: cover;
-  object-position: center 22%;
-  border-radius: 14px;
-  border: 1px solid var(--faint);
-  filter: saturate(0.98) contrast(1.02);
+  object-position: center 14%;
+  transform: scale(1.12);
+  transform-origin: center 22%;
 }
 
-.about-intro-copy {
-  min-width: 0;
-  max-width: 34rem;
-  padding-top: 0;
+.about-minimal p {
+  margin: 0 0 1.3em;
+  font-family: var(--sans);
+  font-size: 18px;
+  line-height: 1.75;
+  color: var(--ink);
 }
 
-.about-intro-copy p {
-  color: var(--ink-2);
+.about-minimal .intro-row p {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.6;
 }
 
-.about-intro-copy p:last-child {
+.about-minimal p:last-child {
   margin-bottom: 0;
 }
 
-.about-title {
-  margin: 0 0 20px;
-  font-family: var(--serif);
-  font-size: clamp(28px, 4.4vw, 38px);
-  font-weight: 400;
-  line-height: 1.15;
+.about-minimal a {
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--accent) 34%, var(--faint));
+  text-underline-offset: 4px;
+  transition: color var(--transition), text-decoration-color var(--transition);
 }
 
-.about-section {
-  max-width: 40rem;
-  padding-top: 24px;
-  margin-top: 28px;
-  border-top: 1px solid var(--faint);
+.about-minimal a:hover {
+  color: color-mix(in srgb, var(--accent) 72%, var(--ink));
+  text-decoration-color: color-mix(in srgb, var(--accent) 62%, var(--ink));
 }
 
-.about-section h2 {
-  margin: 0 0 14px;
-  color: color-mix(in srgb, var(--accent) 56%, var(--muted));
-  font-family: var(--sans);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.about-section p {
-  margin: 0;
-}
-
-.about-links ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.about-links li {
-  padding: 12px 0;
-  border-top: 1px solid color-mix(in srgb, var(--faint) 82%, transparent);
-}
-
-.about-links li:first-child {
-  padding-top: 0;
-  border-top: 0;
-}
-
-.about-links li:last-child {
-  padding-bottom: 0;
+@media (max-width: 520px) {
+  .about-minimal .intro-row {
+    grid-template-columns: 124px minmax(0, 1fr);
+    gap: 20px;
+  }
+  .about-minimal .plate-frame {
+    width: 124px;
+  }
 }
 
 /* Featured essay ---------------------------------------- */
