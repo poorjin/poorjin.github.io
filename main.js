@@ -50,6 +50,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
       let html = `
         <article class="featured">
+          <span class="thumb" aria-hidden="true">
+            <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="0.5" y="0.5" width="55" height="55" rx="2" stroke="currentColor"/>
+              <rect x="14.5" y="16.5" width="23" height="23" rx="1" stroke="currentColor"/>
+            </svg>
+          </span>
+          <span class="label">Featured</span>
           <h2><a href="/article.html?slug=${featured.slug}">${featured.title}</a></h2>
           <p class="lede">${featured.lede}</p>
           <p class="meta">${featured.date}</p>
@@ -75,6 +82,16 @@ document.addEventListener("DOMContentLoaded", function () {
       if (hasMore) {
         html += `<p class="see-all"><a href="/archive.html">See all posts &rarr;</a></p>`;
       }
+
+      html += `
+        <section class="currently">
+          <span class="k">Current Focus</span>
+          <dl>
+            <dt>Building</dt>
+            <dd>A small tool for watching agent traces slow down — <em>learning what &ldquo;good&rdquo; looks like before the system writes its own tests.</em></dd>
+          </dl>
+        </section>
+      `;
 
       container.innerHTML = html;
     })

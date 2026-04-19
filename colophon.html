@@ -8,14 +8,12 @@
         location.replace("https://" + location.host + location.pathname + location.search + location.hash);
       }
     </script>
-    <title>About — Jin’s Latent Space</title>
-    <meta name="description" content="About Jin Dai, the ML engineer behind Jin’s Latent Space." />
-    <!-- Open Graph -->
+    <title>Colophon — Jin’s Latent Space</title>
+    <meta name="description" content="A note on the materials and philosophy of this site." />
     <meta property="og:type"        content="website" />
-    <meta property="og:url"         content="https://poorjin.github.io/about.html" />
-    <meta property="og:title"       content="About — Jin’s Latent Space" />
-    <meta property="og:description" content="About Jin Dai, the ML engineer behind Jin’s Latent Space." />
-    <!-- RSS -->
+    <meta property="og:url"         content="https://poorjin.github.io/colophon.html" />
+    <meta property="og:title"       content="Colophon — Jin’s Latent Space" />
+    <meta property="og:description" content="A note on the materials and philosophy of this site." />
     <link rel="alternate" type="application/rss+xml" title="Jin’s Latent Space" href="/feed.xml" />
     <link rel="icon" type="image/svg+xml" href="/icons/jindai-mustard.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/icons/jindai-32-mustard.png" />
@@ -34,7 +32,7 @@
       })();
     </script>
   </head>
-  <body>
+  <body class="colophon-page">
 
     <header>
       <div class="wrap">
@@ -50,38 +48,97 @@
           <a href="/">Blog</a>
           <a href="/archive.html">All Posts</a>
           <a href="/search.html">Search</a>
-          <a href="/about.html" aria-current="page">About</a>
-          <a href="/colophon.html">Colophon</a>
+          <a href="/about.html">About</a>
+          <a href="/colophon.html" aria-current="page">Colophon</a>
         </nav>
         <hr class="rule" style="margin-top: 0;" />
       </div>
     </header>
 
-    <main class="about-main">
+    <main>
       <div class="wrap">
-        <section class="about-body">
-          <div class="col-portrait">
-            <div class="portrait">
-              <img src="/profile_pic.PNG" alt="Portrait of Jin Dai" />
+        <section class="colophon-body">
+
+          <div class="intro">
+            <div class="mark-spot">
+              <svg class="m" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect x="0.5" y="0.5" width="55" height="55" rx="2" stroke="currentColor"/>
+                <rect x="14.5" y="16.5" width="23" height="23" rx="1" stroke="currentColor"/>
+              </svg>
             </div>
-            <div class="caption">Los Angeles · 2026</div>
-          </div>
-          <div class="divider" aria-hidden="true"></div>
-          <div class="col-bio">
-            <p>I'm Jin — a machine learning engineer in Los Angeles. I write about
-            applied AI, evaluation, agents, model behavior, and the gap between
-            impressive demos and tools people actually want to keep using.</p>
-            <p>Some posts are more considered. Some are notes from the middle of
-            figuring something out. Some are just things I wanted to pin down
-            before they slipped away. Sometimes an interesting chat with AI ends
-            up here too.</p>
-            <p>You can find me on
-              <a href="https://github.com/poorjin" target="_blank" rel="noopener">GitHub</a>,
-              by <a href="mailto:jindaidx@gmail.com">email</a>,
-              or via <a href="/feed.xml">RSS</a>.
+            <p class="lede">
+              A short note on the materials of this site. It is set in two
+              typefaces, lives on four colors, and was built with care —
+              <em>the way I want to build most things</em>.
             </p>
-            <div class="sig">— Jin</div>
           </div>
+
+          <dl class="entries">
+
+            <div class="entry">
+              <dt>Typefaces</dt>
+              <dd>
+                <span class="row">Mona Sans for everything that carries meaning.</span>
+                <span class="row small">JetBrains Mono for dates, tags, and small metadata.</span>
+              </dd>
+            </div>
+
+            <div class="entry">
+              <dt>Palette</dt>
+              <dd>
+                <div class="swatches">
+                  <span class="sw"><span class="chip" style="background: #f5f2ec"></span> Paper</span>
+                  <span class="sw"><span class="chip" style="background: #2b2620"></span> Ink</span>
+                  <span class="sw"><span class="chip" style="background: #8a7f70"></span> Muted</span>
+                  <span class="sw"><span class="chip" style="background: #e0b24a"></span> Mustard</span>
+                </div>
+                <span class="row small" style="margin-top: 10px;">Mustard is reserved for the reading-progress bar. Nothing else.</span>
+              </dd>
+            </div>
+
+            <div class="entry">
+              <dt>Mark</dt>
+              <dd>
+                <span class="row">A kanji seal, designed as a small stamp.</span>
+                <span class="row small">The mark in the margin is two nested squares, deliberately offset.</span>
+              </dd>
+            </div>
+
+            <div class="entry">
+              <dt>Grid</dt>
+              <dd>
+                <span class="row">680px reading column, 72px left gutter.</span>
+                <span class="row small">Dates and anchors live in the gutter. The body column stays quiet.</span>
+              </dd>
+            </div>
+
+            <div class="entry">
+              <dt>Built with</dt>
+              <dd>
+                <span class="row">Hand-written HTML, CSS, and a little JavaScript.</span>
+                <span class="row small">No framework. No build step. Hosted on GitHub Pages.</span>
+              </dd>
+            </div>
+
+            <div class="entry">
+              <dt>Philosophy</dt>
+              <dd>
+                <span class="row">Quiet, spacious, and built deeply.</span>
+                <span class="row small">For the AI era, those feel like the things worth keeping.</span>
+              </dd>
+            </div>
+
+            <div class="entry">
+              <dt>Thanks</dt>
+              <dd>
+                <span class="row">To everyone whose writing made me want to start one of these.</span>
+              </dd>
+            </div>
+
+          </dl>
+
+          <div class="finis" aria-hidden="true">Fin</div>
+
         </section>
       </div>
     </main>
