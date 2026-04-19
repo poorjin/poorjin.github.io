@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="1024" height="1024">
+  <defs>
+    <mask id="m">
+      <rect width="200" height="200" fill="black"></rect>
+      <rect x="16" y="16" width="168" height="168" rx="20" ry="20" fill="white"></rect>
+      <rect x="98" y="44" width="4" height="116" fill="black"></rect>
+      <rect x="44" y="50" width="40" height="12" fill="black"></rect>
+      <rect x="60" y="50" width="16" height="94" fill="black"></rect>
+      <path d="M 36 120 L 76 120 L 76 144 Q 76 156 64 156 L 48 156 Q 36 156 36 144 Z" fill="black"></path>
+      <path d="M 118 50 L 133 50 L 134 51 L 134 54 L 148 54 Q 170 54 170 108 Q 170 152 148 152 L 134 152 L 134 156 L 119 156 L 118 155 Z" fill="black"></path>
+      <path d="M 142 64 L 148 64 Q 158 64 158 108 Q 158 144 148 144 L 142 144 Z" fill="white"></path>
+    </mask>
+  </defs>
+  <rect width="200" height="200" fill="#2b2620"></rect>
+  <rect width="200" height="200" fill="#e0b24a" mask="url(#m)"></rect>
+</svg>
