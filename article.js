@@ -287,7 +287,6 @@ document.addEventListener("DOMContentLoaded", function () {
         </header>
         <div class="article-body">
           ${bodyHtml}
-          <div class="article-end-mark" aria-hidden="true">❦</div>
         </div>
         <nav class="article-end-nav" aria-label="Article end navigation">
           <a href="/" class="article-end-link">Blog</a>

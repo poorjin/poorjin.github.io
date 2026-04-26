@@ -624,6 +624,10 @@ main.about-main {
 
 /* ── Article page ───────────────────────────────────── */
 
+.article-page main {
+  padding-top: 28px;
+}
+
 .article-header {
   margin-bottom: 64px;
   padding-bottom: 0;
@@ -874,17 +878,6 @@ main.about-main {
 
 .article-body blockquote p {
   margin: 0;
-}
-
-/* End mark — small ink fleuron closes the prose */
-.article-end-mark {
-  display: block;
-  max-width: 38em;
-  margin: 56px 0 32px;
-  color: var(--ink);
-  font-size: 14px;
-  letter-spacing: 0.4em;
-  text-align: left;
 }
 
 .article-body ul,
