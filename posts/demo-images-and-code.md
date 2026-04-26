@@ -7,13 +7,17 @@ featured: true
 tags: ["demo"]
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco. Read time is now calculated automatically from word count — no need to set it manually.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.[^1] Ut enim ad minim veniam, quis nostrud exercitation ullamco. Read time is now calculated automatically from word count — no need to set it manually.
+
+[^1]: Sidenotes use pandoc-style `[^n]` syntax. On wide screens they float into the right gutter; on narrow screens they collapse to italic notes inline.
 
 ## A picture with a caption
 
 ![Mountain landscape at dusk](https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80 "Unsplash — free to use, no upload needed.")
 
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.[^2] Excepteur sint occaecat cupidatat non proident.
+
+[^2]: Each note is opt-in — if a post doesn't use the syntax, no sidenotes appear and the page renders exactly as before.
 
 ## Code blocks with syntax highlighting
 
@@ -54,4 +58,6 @@ LIMIT 5;
 
 ![Laptop on a wooden desk](https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&q=80)
 
-Sunt in culpa qui officia deserunt mollit anim id est laborum. Curabitur pretium tincidunt lacus. Nulla gravida orci a odio, et tempus feugiat.
+Sunt in culpa qui officia deserunt mollit anim id est laborum.[^3] Curabitur pretium tincidunt lacus. Nulla gravida orci a odio, et tempus feugiat.
+
+[^3]: Returning to old code is a kind of archaeology — *cf.* Bachelard on the archaeology of one's own past selves.
