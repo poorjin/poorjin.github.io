@@ -624,27 +624,10 @@ main.about-main {
 
 /* ── Article page ───────────────────────────────────── */
 
-.article-back {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin-bottom: 20px;
-  color: var(--muted);
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.article-back:hover {
-  color: var(--ink);
-  text-decoration: none;
-}
-
 .article-header {
-  margin-bottom: 36px;
-  padding-bottom: 32px;
-  border-bottom: 1px solid var(--hairline);
+  margin-bottom: 64px;
+  padding-bottom: 0;
+  border-bottom: 0;
 }
 
 .article-end-nav {
@@ -671,7 +654,7 @@ main.about-main {
 }
 
 .article-header h1 {
-  margin: 0 0 16px;
+  margin: 0 0 24px;
   font-family: var(--sans);
   font-size: 44px;
   font-weight: 500;
@@ -681,7 +664,7 @@ main.about-main {
 }
 
 .article-header .lede {
-  margin: 24px 0 0;
+  margin: 0 0 32px;
   color: var(--ink-2);
   font-size: 22px;
   font-style: italic;
@@ -693,19 +676,33 @@ main.about-main {
 .article-header .meta {
   color: var(--muted);
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 10.5px;
+  font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px 24px;
-  align-items: baseline;
-  margin: 0 0 24px;
+  align-items: center;
+  gap: 0;
+  margin: 0;
+}
+
+/* Hairline separators between meta items — periodical style.
+   The first item has no leading separator. */
+.article-header .meta > * + *::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 1px;
+  background: var(--hairline-2);
+  margin: 0 18px;
+  vertical-align: middle;
 }
 
 .article-header .meta .meta-tags {
   color: var(--muted-2);
   letter-spacing: 0.1em;
+  text-transform: none;
 }
 
 .article-body {
