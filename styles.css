@@ -1094,6 +1094,50 @@ main.about-main {
   color: var(--ink);
 }
 
+/* ── Collapsible long code blocks ────────────────────── */
+
+.article-body pre.is-collapsed {
+  max-height: 360px;
+  overflow: hidden;
+}
+
+.article-body pre.is-collapsed::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 96px;
+  background: linear-gradient(to bottom, transparent, var(--paper-2));
+  pointer-events: none;
+  border-radius: 0 0 6px 6px;
+}
+
+.expand-btn {
+  position: absolute;
+  left: 50%;
+  bottom: 14px;
+  transform: translateX(-50%);
+  padding: 6px 14px;
+  background: var(--paper);
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  z-index: 1;
+  transition: color var(--transition), border-color var(--transition);
+}
+
+.expand-btn:hover {
+  border-color: var(--hairline-2);
+  color: var(--ink);
+}
+
 /* ── Footer ─────────────────────────────────────────── */
 
 footer {

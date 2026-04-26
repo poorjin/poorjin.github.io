@@ -303,7 +303,8 @@ document.addEventListener("DOMContentLoaded", function () {
         syncHljsTheme();
       }
 
-      // Inject copy buttons into every <pre> block
+      // Inject copy buttons into every <pre> block, and collapse long ones.
+      const COLLAPSE_THRESHOLD = 360;
       container.querySelectorAll("pre").forEach(function (pre) {
         const code = pre.querySelector("code");
         const languageClass = code && code.className.match(/language-([\w-]+)/);
@@ -321,6 +322,23 @@ document.addEventListener("DOMContentLoaded", function () {
           });
         });
         pre.appendChild(btn);
+
+        if (pre.scrollHeight > COLLAPSE_THRESHOLD) {
+          const lineCount = (code ? code.textContent : pre.textContent)
+            .replace(/\n+$/, "")
+            .split("\n").length;
+          pre.classList.add("is-collapsed");
+          const expandBtn = document.createElement("button");
+          expandBtn.type = "button";
+          expandBtn.className = "expand-btn";
+          const collapsedLabel = "Expand · " + lineCount + " lines";
+          expandBtn.textContent = collapsedLabel;
+          expandBtn.addEventListener("click", function () {
+            const nowCollapsed = pre.classList.toggle("is-collapsed");
+            expandBtn.textContent = nowCollapsed ? collapsedLabel : "Collapse";
+          });
+          pre.appendChild(expandBtn);
+        }
       });
     })
     .catch(function () {
