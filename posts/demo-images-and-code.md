@@ -54,6 +54,49 @@ ORDER BY date DESC
 LIMIT 5;
 ```
 
+A longer one — anything past ~14 lines folds away behind an **Expand** button:
+
+```sql
+-- Top 5 most-read posts in the last 90 days,
+-- joined with each post's tags and average scroll depth.
+WITH recent_views AS (
+  SELECT
+    post_slug,
+    COUNT(*)                   AS views,
+    COUNT(DISTINCT visitor_id) AS uniques,
+    AVG(scroll_depth)          AS avg_scroll
+  FROM page_views
+  WHERE viewed_at >= NOW() - INTERVAL '90 days'
+    AND post_slug IS NOT NULL
+  GROUP BY post_slug
+),
+post_meta AS (
+  SELECT
+    p.slug,
+    p.title,
+    p.published_at,
+    p.read_minutes,
+    STRING_AGG(t.name, ', ' ORDER BY t.name) AS tags
+  FROM posts p
+  LEFT JOIN post_tags_link l ON l.post_id = p.id
+  LEFT JOIN tags t           ON t.id      = l.tag_id
+  WHERE p.published_at IS NOT NULL
+  GROUP BY p.slug, p.title, p.published_at, p.read_minutes
+)
+SELECT
+  pm.title,
+  pm.published_at::DATE   AS published,
+  pm.read_minutes         AS minutes,
+  pm.tags,
+  rv.views,
+  rv.uniques,
+  ROUND(rv.avg_scroll, 2) AS avg_scroll
+FROM post_meta pm
+JOIN recent_views rv ON rv.post_slug = pm.slug
+ORDER BY rv.views DESC
+LIMIT 5;
+```
+
 ## An image without a caption
 
 ![Laptop on a wooden desk](https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&q=80)
