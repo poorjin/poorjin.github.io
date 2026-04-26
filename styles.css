@@ -686,21 +686,10 @@ main.about-main {
   text-transform: uppercase;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  gap: 0;
+  align-items: baseline;
+  column-gap: 22px;
+  row-gap: 6px;
   margin: 0;
-}
-
-/* Hairline separators between meta items — periodical style.
-   The first item has no leading separator. */
-.article-header .meta > * + *::before {
-  content: "";
-  display: inline-block;
-  width: 16px;
-  height: 1px;
-  background: var(--hairline-2);
-  margin: 0 18px;
-  vertical-align: middle;
 }
 
 .article-header .meta .meta-tags {
