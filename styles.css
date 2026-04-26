@@ -717,8 +717,10 @@ main.about-main {
   max-width: none;
 }
 
-/* Drop cap on first paragraph */
-.article-body > p:first-of-type::first-letter {
+/* Drop cap on first paragraph (also handles the case where the first
+   paragraph got wrapped in .has-sidenote because it contains a sidenote). */
+.article-body > p:first-of-type::first-letter,
+.article-body > .has-sidenote:first-child > p::first-letter {
   float: left;
   font-size: 76px;
   line-height: 0.85;
