@@ -22,18 +22,55 @@ function parseMarkdown(md) {
     return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
   }
 
+  // Pull sidenote definitions out, replace inline refs with sup + aside.
+  // Order matters: do this BEFORE other inline parsing so paragraphs collect cleanly.
+  const notes = {};
+  md = md.replace(/^\[\^(\w+)\]:\s*(.+)$/gm, function (_, k, v) {
+    notes[k] = v.trim();
+    return "";
+  });
+  let noteCounter = 0;
+  const noteOrder = {};
+  md = md.replace(/\[\^(\w+)\]/g, function (_, k) {
+    if (!notes[k]) return "";
+    if (!(k in noteOrder)) noteOrder[k] = ++noteCounter;
+    const n = noteOrder[k];
+    return `<sup class="snref">${n}</sup>` +
+      `<aside class="sidenote"><span class="snlabel">Note ${n}</span>${notes[k]}</aside>`;
+  });
+
   // Fenced code blocks (``` lang ... ```)
   md = md.replace(/```([\w-]*)\n([\s\S]*?)```/g, function (_, lang, code) {
     return `<pre><code class="language-${esc(lang)}">${esc(code.trimEnd())}</code></pre>`;
   });
 
-  // Standalone image lines — ![alt](src) or ![alt](src "caption") — become <figure>
-  md = md.replace(/^!\[([^\]]*)\]\(([^)"]+)(?:\s+"([^"]+)")?\)$/gm, function (_, alt, src, caption) {
-    const img = `<img src="${esc(src)}" alt="${esc(alt)}" loading="lazy">`;
-    return caption
-      ? `<figure>${img}<figcaption>${esc(caption)}</figcaption></figure>`
-      : `<figure>${img}</figure>`;
-  });
+  // Standalone image lines — ![alt](src) or ![alt](src "caption") — become <figure>.
+  // Optional trailing {.wide|.bleed|.diptych credit="..."} attribute block.
+  // Diptych: src can be "a.jpg|b.jpg" — two images side-by-side.
+  md = md.replace(/^!\[([^\]]*)\]\(([^)"]+)(?:\s+"([^"]+)")?\)(?:\s*\{([^}]+)\})?$/gm,
+    function (_, alt, src, caption, attrs) {
+      const a = attrs || "";
+      const variant = (a.match(/\.(wide|bleed|diptych|column)/) || [, "column"])[1];
+      const credit = (a.match(/credit="([^"]+)"/) || [, ""])[1];
+      const cls = "figure figure--" + variant;
+      const sources = src.split("|").map(function (s) { return s.trim(); });
+      let frame;
+      if (variant === "diptych" && sources.length >= 2) {
+        frame = `<div class="figure-frame">` +
+          `<img src="${esc(sources[0])}" alt="${esc(alt)}" loading="lazy">` +
+          `<img src="${esc(sources[1])}" alt="${esc(alt)}" loading="lazy">` +
+          `</div>`;
+      } else {
+        frame = `<div class="figure-frame"><img src="${esc(sources[0])}" alt="${esc(alt)}" loading="lazy"></div>`;
+      }
+      const figNum = `<span class="fig-num">Fig.</span>`;
+      const creditHtml = credit ? `<span class="fig-credit">— ${esc(credit)}</span>` : "";
+      const cap = caption || alt;
+      const figcap = cap || credit
+        ? `<figcaption>${figNum}<span class="fig-text">${esc(cap)}${creditHtml}</span></figcaption>`
+        : "";
+      return `<figure class="${cls}">${frame}${figcap}</figure>`;
+    });
 
   const lines = md.split("\n");
   const out = [];
@@ -213,18 +250,48 @@ document.addEventListener("DOMContentLoaded", function () {
       setMeta("meta[property='og:description']", meta.lede || "");
       setMeta("meta[property='og:url']",         location.origin + location.pathname + location.search);
 
+      const tags = (meta.tags || "")
+        .replace(/^\[|\]$/g, "")
+        .split(",")
+        .map(function (t) { return t.trim().replace(/^["']|["']$/g, ""); })
+        .filter(Boolean)
+        .map(function (t) { return "#" + t; })
+        .join("  ");
+
+      let bodyHtml = parseMarkdown(body);
+
+      // Move <aside class="sidenote"> outside any enclosing <p>, then wrap
+      // the paragraph + aside pair in a .has-sidenote div (asides are block-level).
+      bodyHtml = bodyHtml.replace(
+        /<p>([\s\S]*?)(<aside class="sidenote">[\s\S]*?<\/aside>)([\s\S]*?)<\/p>/g,
+        '<div class="has-sidenote"><p>$1$3</p>$2</div>'
+      );
+
+      // Auto-number figures
+      let figIdx = 0;
+      bodyHtml = bodyHtml.replace(/<span class="fig-num">Fig\.<\/span>/g, function () {
+        figIdx += 1;
+        const n = figIdx < 10 ? "0" + figIdx : String(figIdx);
+        return `<span class="fig-num">Fig. ${n}</span>`;
+      });
+
       container.innerHTML = `
         <a href="/" class="article-back">
           <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
           Blog
         </a>
         <header class="article-header">
+          <p class="meta">
+            <span>${meta.date || ""}</span>
+            <span>${readTime}</span>
+            ${tags ? `<span class="meta-tags">${tags}</span>` : ""}
+          </p>
           <h1>${meta.title || slug}</h1>
           ${meta.lede ? `<p class="lede">${meta.lede}</p>` : ""}
-          <p class="meta">${meta.date || ""} &nbsp;&middot;&nbsp; ${readTime}</p>
         </header>
         <div class="article-body">
-          ${parseMarkdown(body)}
+          ${bodyHtml}
+          <div class="article-end-mark" aria-hidden="true">❦</div>
         </div>
         <nav class="article-end-nav" aria-label="Article end navigation">
           <a href="/" class="article-end-link">Blog</a>
