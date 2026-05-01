@@ -86,10 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
       html += `
         <section class="currently">
           <span class="k">Current Focus</span>
-          <dl>
-            <dt>Building</dt>
-            <dd>A small tool for watching agent traces slow down — <em>learning what &ldquo;good&rdquo; looks like before the system writes its own tests.</em></dd>
-          </dl>
+          <p class="focus-line">Building an experimentation platform around two bets: Bayesian inference as the stats core, and agents as the primary interface. Right now I&rsquo;m heads-down on the agent layer and the shared knowledge layer that backs it.</p>
         </section>
       `;
 

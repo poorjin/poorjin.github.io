@@ -1241,10 +1241,10 @@ nav {
 
 /* ── Home hero gap ─────────────────────────────────────────── */
 
-.home-page main { padding-top: 120px; }
+.home-page main { padding-top: 88px; padding-bottom: 64px; }
 
 @media (min-height: 1000px) {
-  .home-page main { padding-top: 160px; }
+  .home-page main { padding-top: 112px; }
 }
 
 
@@ -1256,7 +1256,7 @@ nav {
   column-gap: 32px;
   row-gap: 0;
   align-items: center;
-  padding-bottom: 72px;
+  padding-bottom: 56px;
   margin-bottom: 48px;
   border-bottom: 1px solid var(--hairline);
 }
@@ -1385,7 +1385,7 @@ nav {
   grid-template-columns: 120px 1fr;
   gap: 28px;
   margin-top: 56px;
-  padding-top: 40px;
+  padding-top: 56px;
   border-top: 1px solid var(--hairline);
 }
 
@@ -1396,7 +1396,7 @@ nav {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--muted);
-  padding-top: 2px;
+  padding-top: 4px;
 }
 
 .currently dl {
