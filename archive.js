@@ -61,12 +61,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const monthHtml = months.map(function (month) {
           const items = groups[year][month].map(function (article) {
+            const baseDate = article.dateShort || article.date;
+            const updShort = article.updatedShort || article.updated;
+            const showUpdated =
+              updShort && updShort !== article.dateShort && updShort !== article.date;
+            const dateLabel = showUpdated
+              ? `${baseDate} <span class="archive-date-upd">· upd. ${updShort}</span>`
+              : baseDate;
             return `
               <li>
                 <a href="/article.html?slug=${article.slug}" class="archive-link">
                   <span class="archive-title-row">
                     <span class="archive-title">${article.title}</span>
-                    <span class="archive-date">${article.dateShort || article.date}</span>
+                    <span class="archive-date">${dateLabel}</span>
                   </span>
                   <span class="archive-lede">${article.lede || ""}</span>
                 </a>

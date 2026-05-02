@@ -3,6 +3,8 @@ title: "Demo: images, code highlighting, and copy button"
 lede: "A quick test post showing pictures with captions, syntax-highlighted code blocks, and the copy button that appears on hover."
 date: "February 28, 2026"
 dateShort: "Feb 28"
+updated: "May 2, 2026"
+updatedShort: "May 2"
 featured: true
 tags: ["demo"]
 ---

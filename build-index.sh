@@ -18,6 +18,8 @@ for file in "$DIR"/posts/*.md; do
   lede=""
   date=""
   dateShort=""
+  updated=""
+  updatedShort=""
   featured="false"
   tags=""
 
@@ -37,12 +39,14 @@ for file in "$DIR"/posts/*.md; do
     val="$(echo "${line#*:}" | sed 's/^ *//;s/ *$//;s/^"//;s/"$//')"
 
     case "$key" in
-      title)     title="$val" ;;
-      lede)      lede="$val" ;;
-      date)      date="$val" ;;
-      dateShort) dateShort="$val" ;;
-      featured)  featured="$val" ;;
-      tags)      tags="$val" ;;
+      title)        title="$val" ;;
+      lede)         lede="$val" ;;
+      date)         date="$val" ;;
+      dateShort)    dateShort="$val" ;;
+      updated)      updated="$val" ;;
+      updatedShort) updatedShort="$val" ;;
+      featured)     featured="$val" ;;
+      tags)         tags="$val" ;;
     esac
   done < "$file"
 
@@ -54,12 +58,14 @@ for file in "$DIR"/posts/*.md; do
   else
     printf ',\n  {\n' >> "$OUT"
   fi
-  printf '    "slug":      "%s",\n' "$slug" >> "$OUT"
-  printf '    "featured":  %s,\n' "$featured" >> "$OUT"
-  printf '    "title":     "%s",\n' "$title" >> "$OUT"
-  printf '    "lede":      "%s",\n' "$lede" >> "$OUT"
-  printf '    "date":      "%s",\n' "$date" >> "$OUT"
-  printf '    "dateShort": "%s"\n' "$dateShort" >> "$OUT"
+  printf '    "slug":         "%s",\n' "$slug" >> "$OUT"
+  printf '    "featured":     %s,\n'   "$featured" >> "$OUT"
+  printf '    "title":        "%s",\n' "$title" >> "$OUT"
+  printf '    "lede":         "%s",\n' "$lede" >> "$OUT"
+  printf '    "date":         "%s",\n' "$date" >> "$OUT"
+  printf '    "dateShort":    "%s",\n' "$dateShort" >> "$OUT"
+  printf '    "updated":      "%s",\n' "$updated" >> "$OUT"
+  printf '    "updatedShort": "%s"\n'  "$updatedShort" >> "$OUT"
   printf '  }' >> "$OUT"
 
 done

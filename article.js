@@ -281,6 +281,9 @@ document.addEventListener("DOMContentLoaded", function () {
           ${meta.lede ? `<p class="lede">${meta.lede}</p>` : ""}
           <p class="meta">
             <span>${meta.date || ""}</span>
+            ${meta.updated && meta.updated !== meta.date
+              ? `<span class="meta-updated">Updated ${meta.updated}</span>`
+              : ""}
             <span>${readTime}</span>
             ${tags ? `<span class="meta-tags">${tags}</span>` : ""}
           </p>

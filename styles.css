@@ -698,6 +698,19 @@ main.about-main {
   text-transform: none;
 }
 
+.article-header .meta .meta-updated {
+  color: var(--muted-2);
+  font-style: italic;
+  letter-spacing: 0.14em;
+}
+
+.archive-date-upd {
+  margin-left: 6px;
+  color: var(--muted-2);
+  font-style: italic;
+  letter-spacing: 0.02em;
+}
+
 .article-body {
   font-size: 18px;
   line-height: 1.82;
